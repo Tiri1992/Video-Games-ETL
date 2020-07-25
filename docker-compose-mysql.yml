@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+    db:
+        image: mysql:5.7.31
+        environment:      
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_DATABASE=VideoGamesDB
+        ports:
+            # Host: Container
+            - "3600:3306"
+        # Relative path mount
+        volumes:
+            - ./mysql-data:/mysql-data/
+            - ./init_sql_scripts:/init_sql_scripts/
+            - ./mysql.cnf:/etc/mysql/mysql.cnf
+            - ./init:/docker-entrypoint-initdb.d/
+    
+    adminer:
+        image: adminer
+        restart: always
+        ports:
+            - 8080:8080
