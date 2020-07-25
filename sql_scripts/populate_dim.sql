@@ -16,7 +16,7 @@ select
 from source_data_staging
 order by Name asc;
 
--- POPULATE DIM GENRE
+-- POPULATE DIM PLATFORM
 insert ignore into d_platform(
 	Platform,
 	Publisher

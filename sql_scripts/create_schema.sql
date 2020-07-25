@@ -1,20 +1,20 @@
 -- dim Name
 create table if not exists d_name (
 	NameID int auto_increment primary key,
-	Name varchar(50)
+	Name varchar(50) unique
 );
 
 -- dim Platform: Platform, Publisher
 create table if not exists d_platform (
 	PlatformID int auto_increment primary key,
-	Platform varchar(50),
-	Publisher varchar(50)
+	Platform varchar(50) unique,
+	Publisher varchar(50) unique
 );
 
 -- dim Genre
 create table if not exists d_genre (
 	GenreID int auto_increment primary key,
-	Genre varchar(50)
+	Genre varchar(50) unique
 );
 
 -- Fact Table `Measures`: NA_Sales, EU_Sales, JP_Sales, Other_Sales, Global_Sales

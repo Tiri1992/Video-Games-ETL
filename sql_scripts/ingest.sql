@@ -1,4 +1,4 @@
-LOAD DATA LOCAL INFILE "/Users/sotirigeorgiou/Documents/Other/StarSchemaDesign/vgsales.csv"
+LOAD DATA LOCAL INFILE "./csv_files/vgsales.csv"
 INTO TABLE source_data_staging
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
